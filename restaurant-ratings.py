@@ -12,7 +12,8 @@ def parse_scores_file(filename):
     ratings_dict = {}
     for line in scores:
         restaurant_rating = line.rstrip().split(":")
-        ratings_dict[restaurant_rating[0]] = restaurant_rating[1]
+        restaurant, rating = restaurant_rating
+        ratings_dict[restaurant] = rating
     return ratings_dict
 
 def sort_and_print_ratings(ratings_dict):
